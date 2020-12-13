@@ -1,0 +1,113 @@
+﻿@model GroupA_A3.Employee
+
+@{
+    ViewBag.Title = "ViewEmployee";
+}
+
+
+<div class="container body-content">
+    <h2 id="head1">Employee Details</h2>
+
+    <div class="row">
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-8 set">
+            <div class="row">
+                <div class="col-md-4">
+                    <p><strong class="para1">First Name: </strong></p>
+                </div>
+                <div class="col-md-8 set2">
+                    <p class="para">@Model.FirstName </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <p><strong class="para1">Last Name: </strong></p>
+                </div>
+                <div class="col-md-8 set2">
+                    <p class="para">@Model.LastName </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <p><strong class="para1">Phone Number: </strong></p>
+                </div>
+                <div class="col-md-8 set2">
+                    <p class="para">@Model.PhoneNumber </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <p><strong class="para1">Email: </strong></p>
+                </div>
+                <div class="col-md-8 set2">
+                    <p class="para">@Model.EmailAddress </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <p><strong class="para1">Title: </strong></p>
+                </div>
+                <div class="col-md-8 set2">
+                    <p class="para">@Model.Title </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <p><strong class="para1">Salary: </strong></p>
+                </div>
+                <div class="col-md-8 set2">
+                    <p class="para">@Model.Salary </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <p><strong class="para1">Department Name: </strong></p>
+                </div>
+                <div class="col-md-8 set2">
+                    <p class="para">@Model.Department.DepartmentName </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <p><strong class="para1">Department Code: </strong></p>
+                </div>
+                <div class="col-md-8 set2">
+                    <p class="para">@Model.Department.DepartmentCode</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <p><strong class="para1">Home Address: </strong></p>
+                </div>
+                <div class="col-md-8 set2">
+                    <p class="para">@Model.HomeAddress.Street, @Model.HomeAddress.City, @Model.HomeAddress.PostalCode, @Model.HomeAddress.Province </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <p><strong class="para1">Office Location: </strong></p>
+                </div>
+                <div class="col-md-8 set2">
+                    <p class="para">@Model.OfficeAddress.Street, @Model.OfficeAddress.City, @Model.OfficeAddress.PostalCode, @Model.OfficeAddress.Province </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    </div>
+

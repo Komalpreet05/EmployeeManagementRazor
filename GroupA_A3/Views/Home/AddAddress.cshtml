@@ -1,0 +1,95 @@
+﻿@model GroupA_A3.Address
+
+@{
+    ViewBag.Title = "AddAddress";
+}
+
+<style>
+    span.text-danger {
+        color: red;
+        font-size: 17px;
+    }
+
+    form#oneForm {
+        background: url(https://cdn.pixabay.com/photo/2018/05/25/16/43/cube-sea-3429485__340.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 30px;
+        color: white;
+        border-radius: 20px;
+    }
+
+    input.btn.btn-primary {
+        background: #e4cf21f2;
+        color: black;
+        border: none;
+    }
+</style>
+<div class="container body-content">
+    <h2 id="head1">Add Address</h2>
+    
+    <div class="row">
+        <div class="col-md-2">
+
+        </div>
+
+        <div class="col-md-8">
+
+            @using (Html.BeginForm("AddAddress", "Home", FormMethod.Post, new { @id = "oneForm" }))
+            {
+
+                <div class="form-group">
+                    Address
+                    @Html.TextBoxFor(k => k.Street, new { @class = "form-control" })
+                    <span class="text-danger">*</span>
+                    @Html.ValidationMessageFor(k => k.Street, null, new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.DisplayNameFor(k => k.City)
+                    @Html.TextBoxFor(k => k.City, new { @class = "form-control" })
+                    <span class="text-danger">*</span>
+                    @Html.ValidationMessageFor(k => k.City, null, new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.DisplayNameFor(k => k.PostalCode)
+                    @Html.TextBoxFor(k => k.PostalCode, new { @class = "form-control" })
+                    <span class="text-danger">*</span>
+                    @Html.ValidationMessageFor(k => k.PostalCode, null, new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.DisplayNameFor(k => k.Province)
+                    @Html.DropDownListFor(k => k.Province, new List<SelectListItem> {
+
+                           new SelectListItem{ Text = "Alberta", Value="Alberta"},
+                           new SelectListItem{ Text = "British Coulmbia", Value="British Coulmbia"},
+                           new SelectListItem{ Text = "Manitoba", Value="Manitoba"},
+                           new SelectListItem{ Text = "New Brunswick", Value="New Brunswick"},
+                           new SelectListItem{ Text = "Newfoundland and Labrador", Value="Newfoundland and Labrador"},
+                           new SelectListItem{ Text = "Nova Scotia", Value="Nova Scotia"},
+                           new SelectListItem{ Text = "Ontario", Value="Ontario"},
+                           new SelectListItem{ Text = "Prince Edward Island", Value="Prince Edward Island"},
+                           new SelectListItem{ Text = "Quebec", Value="Quebec"},
+                           new SelectListItem{ Text = "Saskatchewan", Value="Saskatchewan"},
+                           new SelectListItem{ Text = "Nunavut", Value="Nunavut"},
+                           new SelectListItem{ Text = "Yukon", Value="Yukon" }
+
+                           }, new { @class = "form-control" })
+                </div>
+
+
+
+                <br />
+                <div>
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+
+            }
+
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+  </div>
+

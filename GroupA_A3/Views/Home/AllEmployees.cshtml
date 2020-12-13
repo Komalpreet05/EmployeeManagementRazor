@@ -1,0 +1,123 @@
+﻿
+
+@model List<GroupA_A3.Employee>
+
+@{
+    ViewBag.Title = "AllEmployees";
+}
+
+
+<style>
+    .card.card-komal {
+        padding: 33.5px;
+        background: #e4ce92bf;
+        width: 100%;
+    }
+
+    .btn-primary {
+        color: #fff;
+        background-color: #101cac;
+        border-color: #101cac;
+    }
+
+        .btn-primary:hover {
+            color: #fff;
+            background-color: brown;
+            border-color: brown;
+
+        }
+
+    .card-body.card-body-komal {
+        padding: 20px;
+        width: 500px;
+        background: #94dcf4bf;
+        margin-top: 10px;
+    }
+
+    p.card-text {
+        padding: 5px;
+    }
+
+    .col-md-6.col-md-6-komal {
+        margin-bottom: 22px;
+    }
+
+    .card-title-komal {
+        color: #ae2608;
+        padding: 0px !important;
+        font-size: xx-large;
+        margin: 0px !important;
+    }
+
+    h4#head2 {
+        text-align: center;
+        font-size: 35px;
+        padding-bottom: 30px;
+        margin-top: 0;
+    }
+
+    button#btn a {
+        text-decoration: none;
+        color: white;
+        font-size: 22px;
+    }
+
+    img.card-img-top {
+        padding: 20px;
+        background: #94dcf4bf;
+        border-radius: 50%;
+    }
+
+    .btn-info {
+        color: #fff;
+        background-color: #1da81b;
+        border-color: #1da81b;
+    }
+
+    .btn-info:hover {
+        color: #fff;
+        background-color: springgreen;
+        border-color: springgreen;
+    }
+
+    
+</style>
+<div class="container body-content">
+    <h2 id="head1">All Employees</h2>
+    
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-6 col-md-6-komal">
+                <div class="card">
+                    <img class="card-img-top" src="~/Images/download.png" height="350" width="500">
+                    <div class="card-body card-body-komal">
+                        <h4 class="card-title card-title-komal">@Html.DisplayFor(x => item.FirstName) @Html.DisplayFor(x => item.LastName)</h4>
+                        <p class="card-text">
+
+                            <strong>Title: </strong>@Html.DisplayFor(x => item.Title)<br />
+                            <strong>Department: </strong>@Html.DisplayFor(x => item.Department.DepartmentName) <br />
+                            <strong>Home Address: </strong><span class="glyphicon glyphicon-home">&nbsp;</span>@Html.DisplayFor(x => item.HomeAddress.Street) <br />
+                            <strong>Office Address: </strong><span class="glyphicon glyphicon-map-marker">&nbsp;</span>@Html.DisplayFor(x => item.OfficeAddress.Street) <br />
+
+                        </p>
+
+
+                        @Html.ActionLink("More Details", "ViewEmployee", new { @employeeID = item.EmployeeID }, new { @class = "btn btn-primary" })
+                        @Html.ActionLink("Edit Details", "EditEmployee", new { @employeeID = item.EmployeeID }, new { @class = "btn btn-primary" })
+
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+
+
+
+
+
+
+

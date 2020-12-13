@@ -1,0 +1,171 @@
+﻿@model GroupA_A3.Employee
+
+@{
+    ViewBag.Title = "EditEmployee";
+}
+
+
+<style>
+    span.text-danger {
+        color: red;
+        font-size: 17px;
+    }
+
+    form#oneForm {
+        background: url(https://cdn.pixabay.com/photo/2019/12/13/09/46/umbrella-4692572__340.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 30px;
+        color: white;
+        border-radius: 20px;
+    }
+
+    input.btn.btn-primary {
+        background: #e4cf21f2;
+        color: black;
+        border: none;
+        width: 100%;
+    }
+    a.btn.btn-primary {
+        width: 100%;
+        margin-top: 10px;
+    }
+</style>
+<div class="container body-content">
+    <h2 id="head1">Edit Employee</h2>
+    @using (Html.BeginForm("EditEmployee", "Home", FormMethod.Post, new { @id = "oneForm" }))
+    {
+
+        @Html.HiddenFor(model => model.EmployeeID)
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    @Html.DisplayNameFor(k => k.FirstName)
+                    @Html.TextBoxFor(k => k.FirstName, new { @class = "form-control" })
+                    <span class="text-danger">*</span>
+                    @Html.ValidationMessageFor(x => x.FirstName, null, new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    @Html.DisplayNameFor(k => k.LastName)
+                    @Html.TextBoxFor(k => k.LastName, new { @class = "form-control" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            Home Address
+            @Html.TextBoxFor(k => k.HomeAddress.Street, new { @class = "form-control" })
+            <span class="text-danger">*</span>
+            @Html.ValidationMessageFor(x => x.HomeAddress.Street, null, new { @class = "text-danger" })
+        </div>
+
+        <div class="row">
+            <div class="col-md-5">
+                <div class="form-group">
+                    @Html.DisplayNameFor(k => k.HomeAddress.City)
+                    @Html.TextBoxFor(k => k.HomeAddress.City, new { @class = "form-control" })
+                    <span class="text-danger">*</span>
+                    @Html.ValidationMessageFor(x => x.HomeAddress.City, null, new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    @Html.DisplayNameFor(k => k.HomeAddress.Province)
+                    @Html.DropDownListFor(k => k.HomeAddress.Province, new List<SelectListItem> {
+
+                           new SelectListItem{ Text = "Alberta", Value="Alberta"},
+                           new SelectListItem{ Text = "British Coulmbia", Value="British Coulmbia"},
+                           new SelectListItem{ Text = "Manitoba", Value="Manitoba"},
+                           new SelectListItem{ Text = "New Brunswick", Value="New Brunswick"},
+                           new SelectListItem{ Text = "Newfoundland and Labrador", Value="Newfoundland and Labrador"},
+                           new SelectListItem{ Text = "Nova Scotia", Value="Nova Scotia"},
+                           new SelectListItem{ Text = "Ontario", Value="Ontario"},
+                           new SelectListItem{ Text = "Prince Edward Island", Value="Prince Edward Island"},
+                           new SelectListItem{ Text = "Quebec", Value="Quebec"},
+                           new SelectListItem{ Text = "Saskatchewan", Value="Saskatchewan"},
+                           new SelectListItem{ Text = "Nunavut", Value="Nunavut"},
+                           new SelectListItem{ Text = "Yukon", Value="Yukon" }
+
+                           }, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    @Html.DisplayNameFor(k => k.HomeAddress.PostalCode)
+                    @Html.TextBoxFor(k => k.HomeAddress.PostalCode, new { @class = "form-control", placeholder = "X1Y2Z3" })
+                    <span class="text-danger">*</span>
+                    @Html.ValidationMessageFor(k => k.HomeAddress.PostalCode, null, new { @class = "text-danger" })
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    @Html.DisplayNameFor(k => k.PhoneNumber)
+                    @Html.TextBoxFor(k => k.PhoneNumber, new { @class = "form-control" })
+                    <span class="text-danger">*</span>
+                    @Html.ValidationMessageFor(k => k.PhoneNumber, null, new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    @Html.DisplayNameFor(k => k.EmailAddress)
+                    @Html.TextBoxFor(k => k.EmailAddress, new { @class = "form-control" })
+                    <span class="text-danger">*</span>
+                    @Html.ValidationMessageFor(k => k.EmailAddress, null, new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    @Html.DisplayNameFor(k => k.Salary)
+                    @Html.TextBoxFor(k => k.Salary, new { @class = "form-control" })
+                    <span class="text-danger">*</span>
+                    @Html.ValidationMessageFor(k => k.Salary, null, new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    @Html.DisplayNameFor(k => k.Title)
+                    @Html.TextBoxFor(k => k.Title, new { @class = "form-control" })
+                    <span class="text-danger">*</span>
+                    @Html.ValidationMessageFor(k => k.Title, null, new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    @Html.DisplayNameFor(k => k.Department.DepartmentName)
+                    @Html.DropDownListFor(x => x.EmployeeDepartmentID, ViewBag.AllDepartments as SelectList, new { @class = "form-control" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            Office Address
+            @Html.DropDownListFor(x => x.LocationAddressID, ViewBag.AllAddresses as SelectList, new { @class = "form-control" })
+
+        </div>
+
+        <br />
+        <div class="row">
+           
+                <input type="submit" value="Save" class="btn btn-primary" />
+            
+                @Html.ActionLink("Delete", "DeleteEmployee", new { @employeeID = Model.EmployeeID }, new { @class = "btn btn-primary" })
+         
+            </div>
+
+
+    }
+
+</div>

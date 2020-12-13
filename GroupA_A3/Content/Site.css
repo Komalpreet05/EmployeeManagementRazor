@@ -1,0 +1,119 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+h2#head1 {
+    text-align: center;
+    font-size: 60px;
+    padding: 30px;
+    padding-bottom: 15px;
+    color: #e44e10;
+    margin-top: 0;
+    font-weight: 600;
+}
+
+
+
+
+span.text-danger {
+    color: red;
+    font-size: 17px;
+}
+/******************************************/
+/*navigation bar*/
+
+.navbar.navbar-inverse.navbar-fixed-top {
+    background: #06572f;
+}
+
+a.navbar-brand {
+    color: #e8e81d !important;
+}
+
+    a.navbar-brand:hover {
+        color: #5cf0d2 !important;
+    }
+
+li.customize a {
+    color: white !important;
+}
+
+    li.customize a:hover {
+        color: #5cf0d2 !important;
+    }
+
+
+div#oneForm {
+    background: url(https://cdn.pixabay.com/photo/2016/08/03/09/03/universe-1566159__340.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 30px;
+    color: white;
+    border-radius: 20px;
+}
+
+input#SubmitBtn {
+    width: 100%;
+    background: #42b12b;
+    font-size: 20px;
+    border: none;
+    margin-top: 20px;
+}
+
+
+.form-group {
+    font-size: 16px;
+}
+
+h2#head3 {
+    text-align: center;
+    font-size: 60px;
+    padding: 30px;
+    padding-bottom: 15px;
+    color: #5a2ec1;
+    margin-top: 0;
+    font-weight: 600;
+}
+
+h4#head2 {
+    text-align: center;
+    font-size: 30px;
+    padding-bottom: 30px;
+    margin-top: 0;
+}
+
+.col-md-8.set {
+    border: 3px solid #108714;
+    padding: 25px;
+    border-radius: 40px;
+    background: #e2f84326;
+}
+
+.col-md-9.set2 {
+    padding-left: 0px !important;
+}
+
+p.para {
+    font-size: large;
+    color: black;
+}
+
+strong.para1 {
+    font-size: large;
+    color: #108714;
+    margin-left: 20px;
+}
